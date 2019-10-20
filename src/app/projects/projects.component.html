@@ -1,0 +1,24 @@
+<header class="sticky">
+    <a routerLink="viewerproject"
+       class="button"> Ver un proxecto</a>
+    <a routerLink="newproject"
+       class="button">Novo proxecto</a>
+  
+  </header>
+  
+  <router-outlet></router-outlet>
+  
+
+
+  <h2>Lista de proxectos</h2>
+  <ul *ngIf="projects.length > 0; else empty">
+    <li *ngFor="let project of projects">
+      <span>Codigo: {{ project.id }} </span> <br>
+      <span>Nome: {{ project.name }}</span>
+      <br>
+      <a routerLink="viewerproject/{{ project.id }}"
+         class="button"> Ver</a>
+    </li>
+  </ul>
+  
+  <ng-template #empty> <i>Non hai proxectos</i> </ng-template>  
