@@ -3,12 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "build:prod": "ng build --prod",
+    "build:pub": "ng build --prod --output-path docs --base-href https://introangular4.github.io/practica4-patrimr/",
+    "e2e": "ng e2e",
     "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+    "pub": "npm run build:pub && npm run push",
+    "push": "git add * && git commit -m 'pub' && git push",
+    "start:prod": "npm run build:prod && npm run http-server",
+    "start": "ng serve -o --port 4200",
+    "test": "ng test"
+  }, 
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.11",

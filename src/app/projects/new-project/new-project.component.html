@@ -1,1 +1,16 @@
-<p>new-project works!</p>
+<p>{{ title | uppercase }}</p>
+<form>
+  <fieldset>
+    <legend>Formulario</legend>
+    <section>
+            <label for="name">Nome</label>
+            <input name="name"
+                   type="text"
+                   [(ngModel)]="project.name"                 
+                   />
+          </section>
+  </fieldset>
+  <input value="Novo proxecto"
+         type="submit"
+         (click)="newProject()" />
+</form>
