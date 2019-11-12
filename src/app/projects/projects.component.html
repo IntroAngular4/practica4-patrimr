@@ -10,7 +10,7 @@
 
 
   <h2>Lista de proxectos</h2>
-  <ul *ngIf="projects.length > 0; else empty">
+  <!--<ul *ngIf="projects.length > 0; else empty">
     <li *ngFor="let project of projects">
       <span>Codigo: {{ project.id }} </span> <br>
       <span>Nome: {{ project.name }}</span>
@@ -20,4 +20,7 @@
     </li>
   </ul>
   
-  <ng-template #empty> <i>Non hai proxectos</i> </ng-template>  
+  <ng-template #empty> <i>Non hai proxectos</i> </ng-template>  -->
+  <div *ngIf="proyectos$ | async as proyectos">
+    <app-projectslist [projects]="proyectos"></app-projectslist>
+  </div>

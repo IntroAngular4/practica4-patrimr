@@ -1,5 +1,5 @@
 <p>Código de proxecto: {{projectId}}</p>
-<div *ngFor="let project of projects">
+<div *ngFor="let project of project$">
   <p *ngIf="project.id == projectId">
     Nome do proxecto: {{ project.name }} </p>
 </div>

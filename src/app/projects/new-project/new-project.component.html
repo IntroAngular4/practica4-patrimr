@@ -1,4 +1,4 @@
-<p>{{ title | uppercase }}</p>
+ <!--<p>{{ title | uppercase }}</p>
 <form>
   <fieldset>
     <legend>Formulario</legend>
@@ -12,5 +12,6 @@
   </fieldset>
   <input value="Novo proxecto"
          type="submit"
-         (click)="newProject()" />
-</form>
+         (click)="newProject()" /> 
+</form>-->
+<app-new-projectform (saveProject)="saveProject($event)"></app-new-projectform>

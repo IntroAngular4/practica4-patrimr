@@ -1,0 +1,18 @@
+<form [formGroup]="newProjectForm">
+    <!--<p>{{ title | uppercase }}</p>-->
+  
+    <fieldset>
+      <legend>Formulario</legend>
+      <section>
+        <label for="nome">Nome</label>
+        <input name="name"
+               type="text"
+               formControlName="name"
+            />
+      </section>
+    </fieldset>
+    <button
+           type="submit"
+           (click)="saveProject()"
+           [disabled]='!newProjectForm.valid'> Novo proxecto</button>
+  </form>

@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { Project } from './models/project.model';
+import { ProjectsService } from './projects.service';
 
 @Component({
   selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styles: []
+  templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
-  projects = environment.projects;
-  constructor() { }
+  proyectos$: Observable<Project[]>;
+  constructor(private projectService: ProjectsService) {}
 
   ngOnInit() {
+    this.proyectos$ = this.projectService.getAll();
   }
-
 }
