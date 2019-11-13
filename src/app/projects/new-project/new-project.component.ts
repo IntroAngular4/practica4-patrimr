@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class NewProjectComponent implements OnInit {
   public title = 'Novo proxecto';
-//  proyectos$: Observable<Project[]>;
+  proyectos$: Observable<Project[]>;
   public project: Project;
  // public projects = environment.projects;
   constructor( private projects: ProjectsService) {}
@@ -27,6 +27,6 @@ export class NewProjectComponent implements OnInit {
     // this.project.id = this.projects.length;
     // this.projects.push({ ...this.project });
     // environment.projects = this.projects;
-    this.projects.create(project)
+    this.projects.create(project);
   }
 }

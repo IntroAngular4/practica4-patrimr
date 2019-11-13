@@ -25,7 +25,8 @@ export class ProjectsService {
   }
 
   public create(project: Project) {
-    return this.httpClient.post(this.url, project);
+    console.log(project);
+    return this.httpClient.post(this.url, project).subscribe();
   }
 
   public delete(project: Project) {
