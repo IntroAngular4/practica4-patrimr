@@ -14,4 +14,8 @@
          type="submit"
          (click)="newProject()" /> 
 </form>-->
-<app-new-projectform (save)="saveProject($event)"></app-new-projectform>
+<ng-container *ngIf="proyectos$ | async as proyectos">
+  <app-new-projectform (save)="saveProject($event, proyectos.length)"></app-new-projectform>
+  </ng-container>
+  
+  

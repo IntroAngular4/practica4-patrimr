@@ -11,22 +11,21 @@ import { Observable } from 'rxjs';
 })
 export class NewProjectComponent implements OnInit {
   public title = 'Novo proxecto';
-  proyectos$: Observable<Project[]>;
   public project: Project;
+  
  // public projects = environment.projects;
-  constructor( private projects: ProjectsService) {}
-
+  proyectos$: Observable<Project[]>;
+  constructor(private projects: ProjectsService) {}
+  
   ngOnInit() {
-    // this.project = {
-    //   id: this.projects.length,
-    //   name: ''
-    // };
-    //this.proyectos$ = this.projects.getCount();
+      this.proyectos$ = this.projects.getCount();
   }
-  public saveProject(project: Project) {
-    // this.project.id = this.projects.length;
+  public saveProject(project: Project,  id: number) {
     // this.projects.push({ ...this.project });
     // environment.projects = this.projects;
-    this.projects.create(project);
+
+    project.id= id;
+   
+    this.projects.create(project)
   }
 }
